@@ -33,9 +33,10 @@ namespace Hotel.UnitTests
         public void CanBeCancelledBy_OtherUser_ReturnFalse()
         {
             //Arrange
+            var user = new User();
             Reservation myReservation = new Reservation();
             //Act
-            var result = myReservation.CanBeCancelledBy(new User { IsAdmin = false });
+            var result = myReservation.CanBeCancelledBy(user);
             //Assert
             Assert.IsFalse(result);
         }
